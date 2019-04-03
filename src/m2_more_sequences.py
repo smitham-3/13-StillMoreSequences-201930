@@ -11,8 +11,8 @@ for ITERATING through SEQUENCES, including selections from:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Alex Smith.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -104,9 +104,17 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    string = ""
+    for k in range(1, len(strings)):
+        if len(strings[k]) < len(strings[k-1]):
+            string = string + strings[k]
+        if len(strings[k]) == len(strings[k-1]):
+            string = string + strings[k-1]
+    return string
+
 
 
 def run_test_index_of_largest_number():
@@ -181,9 +189,16 @@ def index_of_largest_number(numbers, n):
 
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    largest = 0
+    for k in range(1, n):
+        if numbers[k] > numbers[k-1]:
+            largest = numbers[k]
+        if numbers[k] == numbers[k-1]:
+            largest = numbers[k-1]
+    return largest
 
 
 # -----------------------------------------------------------------------------
